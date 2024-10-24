@@ -12,7 +12,7 @@ class DivannewparsSpider(scrapy.Spider):
             yield {
                 'name': divan.css('div.lsooF span::text').get(),
                 'price': divan.css('div.pY3d2 span::text').get(),
-                'url': divan.css('a').attrib['href']
+                'url': f"https://www.divan.ru{divan.css('a').attrib['href']}"
             }
 
         # Получаем номер текущей страницы из URL
